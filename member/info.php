@@ -1,8 +1,8 @@
 <?php 
 $title = "صفحة العدة";
 require_once("header.php");
-// echo $_SESSION['name'] . "</br>"; 
-echo "الرصيد: " . $_SESSION['money']; 
+echo "الرصيد: " . $_SESSION['money']."</br>"; 
+echo "نقاط الحياة: " . $_SESSION['lifeP']; 
 ?>
 
     <h1>العدة الحالية:</h1>
@@ -32,5 +32,29 @@ echo "الرصيد: " . $_SESSION['money'];
     </fieldset>
 <?php endwhile;?>
 <br>
+<h1>شراء نقاط حياة</h1>
+<p>10 نقاط = 100$</p>
+<form method="POST" >
+    <label>أدخل عدد النقاط</label>
+    <input type="text" name="buyPoints">
+    <input type="submit" name="submit" value="شراء نقاط حياة">
+</form>
 <?php 
+if(isset($_POST['submit'])){
+    $price = $_POST['buyPoints'] * 10; // if the user enter 10, the price will be 100$.    20 = 200 .... could be change
+    if($_POST['buyPoints'] % 10 !== 0){
+        echo "يجب ان تكون عدد النقاط من مضاعفات 10";
+        die();
+    }
+    if($_SESSION['money'] < $price){
+        echo "لا تمتلك رصيد كافي!";
+        die();
+    }
+    // else
+    $conn->query("UPDATE user_psw SET `money` = " .($_SESSION['money'] - $price). ", `lifeP` = ".($_SESSION['lifeP'] + $_POST['buyPoints'])." WHERE `name` = '" . $_SESSION['name'] . "'");
+    updateGroupPoints($conn);
+    header("Location: info.php");
+    // echo "تم شراء النقاط"; need to fix.
+    
+}
 require_once("footer.php");
