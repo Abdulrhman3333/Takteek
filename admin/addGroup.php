@@ -11,8 +11,10 @@ require_once "header.php";
 <?php
     if(isset($_POST["sumbit"])){
         $groupName = $_POST['group'];
-        $conn->query("INSERT INTO groups VALUES (NULL,'$groupName',0)"); // (id,)
-        echo "تم اضافة مجموعة " . $groupName . " بنجاح.";
+        $adminid =  $_SESSION['id'];
+        $conn->query("INSERT INTO groups VALUES (NULL,'$groupName',0,$adminid)"); // (id,)
+        $_SESSION['message'] = "تم اضافة مجموعة " . $groupName . " بنجاح.";
+        echo "<script>window.location.href='addGroup.php'</script>";
     }
 ?>
 

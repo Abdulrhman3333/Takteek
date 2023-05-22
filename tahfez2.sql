@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 12, 2022 at 08:39 PM
+-- Generation Time: Dec 06, 2022 at 11:28 AM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 7.4.27
 
@@ -29,19 +29,9 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `admin` (
   `id` int(11) NOT NULL,
-  `name` varchar(150) NOT NULL,
   `user` varchar(30) NOT NULL,
-  `password` varchar(30) NOT NULL,
-  `joindate` varchar(50) NOT NULL,
-  `expiredate` varchar(50) NOT NULL
+  `password` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `admin`
---
-
-INSERT INTO `admin` (`id`, `name`, `user`, `password`, `joindate`, `expiredate`) VALUES
-(1, 'owner', 'owner', '1', '', '');
 
 -- --------------------------------------------------------
 
@@ -183,7 +173,7 @@ ALTER TABLE `user_psw`
 -- AUTO_INCREMENT for table `admin`
 --
 ALTER TABLE `admin`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `admincontrols`

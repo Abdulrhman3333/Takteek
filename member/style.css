@@ -1,23 +1,23 @@
 ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: #333;
-  }
-  
-  li {
-    float: right;
-  }
-  
-  li a {
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-  }
-  
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: right;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px;
+  text-decoration: none;
+}
   /* Change the link color to #111 (black) on hover */
   li a:hover {
     background-color: #111;
@@ -38,7 +38,7 @@ ul {
     border-collapse: collapse;
   }
   h1{
-      color: blue;
+      color: rgb(91, 203, 186);
       line-height: 10px;
   }
 
@@ -46,38 +46,37 @@ ul {
 /* spacing */
 
 table {
-    display: inline-flexbox;
-    table-layout: fixed;
-    width: 50%;
-    border-collapse: collapse;
-    border: 3px solid purple;
-    font-size: large;
-  }
+  table-layout: fixed;
+  border-collapse: collapse;
+  border: 3px solid rgb(57, 5, 57);
+  font-size: large;
+}
   
-  thead th:nth-child(1) {
-    width: 10%;
-  }
-  
-  thead th:nth-child(2) {
-    width: 40%;
-  }
-  
-  thead th:nth-child(3) {
-    width: 15%;
-  }
-  
-  thead th:nth-child(4) {
-    width: 35%;
-  }
+
   
   th, td {
     padding: 20px;
   }
   body{
-    background-color: aquamarine;
+    background-color: rgb(212, 229, 223);
   }
   select{
-    background-color: aqua;
-    width: 30%;
+    width: 100%;
+    font-size: 1em;
+    padding: 0.5em;
+
   }
 
+  fieldset {
+    font-size: 1.5em;
+  }
+
+.container{
+  display: inline-block;
+  padding: 10px;
+  /* text-align: center; */
+  width: 50%;
+}
+nav{
+  width: 100%;
+}

@@ -2,9 +2,9 @@
 $title = "الصفحة الرئيسة";
 require_once "header.php";
 echo "<h1>" . "أهلاً " . $_SESSION['name'] . "</h1>" . "</br>";
-echo "<h1>" ."نقودك: " . $_SESSION['money'] . "</h1>" . "</br>";
-echo "<h1>" ."نقاط الحياة: " . $_SESSION['lifeP'] . "</h1>" . "</br>";
-echo "<h1>" ."المجموعة: " . $_SESSION['group'] . "</h1>" . "</br>";
+echo "<h2>" ."الرصيد: " . $_SESSION['money'] . "</h2>" . "</br>";
+echo "<h2>" ."نقاط الحياة: " . $_SESSION['lifeP'] . "</h2>" . "</br>";
+echo "<h2>" ."المجموعة: " . $_SESSION['group'] . "</h2>" . "</br>";
 ?>
 
 <br>
