@@ -10,7 +10,7 @@ if(isset($_POST['submit'])){
         $admins = $conn->query('SELECT * FROM `admin` WHERE `user` = "'. $user .'" AND `password` = "'. $password.'"')->fetch_array(MYSQLI_ASSOC);
 
             if(@count($admins) > 0){
-                if($admins['joindate'] > $admins['expiredate']){
+                if(date("Y-m-d") > $admins['expiredate']){
                     die("لقد انهتى الاشتراك في البرنامج");
                 }
 
@@ -37,7 +37,7 @@ if(isset($_POST['submit'])){
                 if(@count($members) > 0){
                     $dateValidation = $conn->query('SELECT * FROM `admin` WHERE `id` = ' . $members['adminid'])->fetch_array(MYSQLI_ASSOC);
 
-                        if($dateValidation['joindate'] > $dateValidation['expiredate']){
+                        if(date("Y-m-d") > $dateValidation['expiredate']){
                             die("لقد انهتى الاشتراك في البرنامج");
                         }
                         elseif($members['banned']==1){
