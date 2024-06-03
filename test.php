@@ -7,7 +7,7 @@
 </head>
 <body>
     <?php
-        echo date("Y-m-d");
+        echo date("Y-m-d");//A
     
     ?>
 </body>
