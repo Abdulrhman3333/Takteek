@@ -13,7 +13,7 @@ if(isset($_POST['submit'])){
                 if(date("Y-m-d") > $admins['expiredate']){
                     die("لقد انهتى الاشتراك في البرنامج");
                 }
-
+// a
                     $adminId = $admins['id'];
                     $adminUser = $admins['user'];
                     $adminPass = $admins['password'];
